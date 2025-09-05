@@ -17,15 +17,27 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      localforage:
+        specifier: ^1.10.0
+        version: 1.10.0
       lucide-react:
         specifier: ^0.542.0
         version: 0.542.0(react@19.1.1)
+      match-sorter:
+        specifier: ^8.1.0
+        version: 8.1.0
       react:
         specifier: ^19.1.1
         version: 19.1.1
       react-dom:
         specifier: ^19.1.1
         version: 19.1.1(react@19.1.1)
+      react-router-dom:
+        specifier: ^7.8.2
+        version: 7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      sort-by:
+        specifier: ^1.2.0
+        version: 1.2.0
       tailwind-merge:
         specifier: ^2.6.0
         version: 2.6.0
@@ -155,6 +167,10 @@ packages:
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
+
+  '@babel/runtime@7.28.4':
+    resolution: {integrity: sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==}
+    engines: {node: '>=6.9.0'}
 
   '@babel/template@7.27.2':
     resolution: {integrity: sha512-LPDZ85aEJyYSd18/DkjNh4/y1ntkE5KwUHWTiqgRxruuZL2F1yuHligVHLvcHY2vMHXttKFpJn6LwfI7cw7ODw==}
@@ -748,6 +764,10 @@ packages:
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
+  cookie@1.0.2:
+    resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
+    engines: {node: '>=18'}
+
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
@@ -958,6 +978,9 @@ packages:
     resolution: {integrity: sha512-Hs59xBNfUIunMFgWAbGX5cq6893IbWg4KnrjbYwX3tx0ztorVgTDA6B2sxf8ejHJ4wz8BqGUMYlnzNBer5NvGg==}
     engines: {node: '>= 4'}
 
+  immediate@3.0.6:
+    resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
+
   import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
     engines: {node: '>=6'}
@@ -1033,12 +1056,18 @@ packages:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
 
+  lie@3.1.1:
+    resolution: {integrity: sha512-RiNhHysUjhrDQntfYSfY4MU24coXXdEOgw9WGcKHNeEwffDYbF//u87M1EWaMGzuFoSbqW0C9C6lEEhDOAswfw==}
+
   lilconfig@3.1.3:
     resolution: {integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==}
     engines: {node: '>=14'}
 
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
+
+  localforage@1.10.0:
+    resolution: {integrity: sha512-14/H1aX7hzBBmmh7sGPd+AOMkkIrHM3Z1PAyGgZigA1H1p5O5ANnMyWzvpAETtG68/dC4pC0ncy3+PPGzXZHPg==}
 
   locate-path@6.0.0:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
@@ -1057,6 +1086,9 @@ packages:
     resolution: {integrity: sha512-w3hD8/SQB7+lzU2r4VdFyzzOzKnUjTZIF/MQJGSSvni7Llewni4vuViRppfRAa2guOsY5k4jZyxw/i9DQHv+dw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  match-sorter@8.1.0:
+    resolution: {integrity: sha512-0HX3BHPixkbECX+Vt7nS1vJ6P2twPgGTU3PMXjWrl1eyVCL24tFHeyYN1FN5RKLzve0TyzNI9qntqQGbebnfPQ==}
 
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -1109,6 +1141,10 @@ packages:
   object-hash@3.0.0:
     resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==}
     engines: {node: '>= 6'}
+
+  object-path@0.6.0:
+    resolution: {integrity: sha512-fxrwsCFi3/p+LeLOAwo/wyRMODZxdGBtUlWRzsEpsUVrisZbEfZ21arxLGfaWfcnqb8oHPNihIb4XPE8CQPN5A==}
+    engines: {node: '>=0.8.0'}
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -1224,6 +1260,23 @@ packages:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
     engines: {node: '>=0.10.0'}
 
+  react-router-dom@7.8.2:
+    resolution: {integrity: sha512-Z4VM5mKDipal2jQ385H6UBhiiEDlnJPx6jyWsTYoZQdl5TrjxEV2a9yl3Fi60NBJxYzOTGTTHXPi0pdizvTwow==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+
+  react-router@7.8.2:
+    resolution: {integrity: sha512-7M2fR1JbIZ/jFWqelpvSZx+7vd7UlBTfdZqf6OSdF9g6+sfdqJDAWcak6ervbHph200ePlu+7G8LdoiC3ReyAQ==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
   react@19.1.1:
     resolution: {integrity: sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==}
     engines: {node: '>=0.10.0'}
@@ -1234,6 +1287,9 @@ packages:
   readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
+
+  remove-accents@0.5.0:
+    resolution: {integrity: sha512-8g3/Otx1eJaVD12e31UbJj1YzdtVvzH85HV7t+9MJYk/u3XmkOUJ5Ys9wQrf9PCPK8+xn4ymzqYCiZl6QWKn+A==}
 
   resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
@@ -1268,6 +1324,9 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  set-cookie-parser@2.7.1:
+    resolution: {integrity: sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==}
+
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
     engines: {node: '>=8'}
@@ -1279,6 +1338,9 @@ packages:
   signal-exit@4.1.0:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
+
+  sort-by@1.2.0:
+    resolution: {integrity: sha512-aRyW65r3xMnf4nxJRluCg0H/woJpksU1dQxRtXYzau30sNBOmf5HACpDd9MZDhKh7ALQ5FgSOfMPwZEtUmMqcg==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -1546,6 +1608,8 @@ snapshots:
     dependencies:
       '@babel/core': 7.28.4
       '@babel/helper-plugin-utils': 7.27.1
+
+  '@babel/runtime@7.28.4': {}
 
   '@babel/template@7.27.2':
     dependencies:
@@ -2075,6 +2139,8 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
+  cookie@1.0.2: {}
+
   cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
@@ -2302,6 +2368,8 @@ snapshots:
 
   ignore@7.0.5: {}
 
+  immediate@3.0.6: {}
+
   import-fresh@3.3.1:
     dependencies:
       parent-module: 1.0.1
@@ -2362,9 +2430,17 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
+  lie@3.1.1:
+    dependencies:
+      immediate: 3.0.6
+
   lilconfig@3.1.3: {}
 
   lines-and-columns@1.2.4: {}
+
+  localforage@1.10.0:
+    dependencies:
+      lie: 3.1.1
 
   locate-path@6.0.0:
     dependencies:
@@ -2381,6 +2457,11 @@ snapshots:
   lucide-react@0.542.0(react@19.1.1):
     dependencies:
       react: 19.1.1
+
+  match-sorter@8.1.0:
+    dependencies:
+      '@babel/runtime': 7.28.4
+      remove-accents: 0.5.0
 
   merge2@1.4.1: {}
 
@@ -2420,6 +2501,8 @@ snapshots:
   object-assign@4.1.1: {}
 
   object-hash@3.0.0: {}
+
+  object-path@0.6.0: {}
 
   optionator@0.9.4:
     dependencies:
@@ -2515,6 +2598,20 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
+  react-router-dom@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+    dependencies:
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
+      react-router: 7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+
+  react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+    dependencies:
+      cookie: 1.0.2
+      react: 19.1.1
+      set-cookie-parser: 2.7.1
+    optionalDependencies:
+      react-dom: 19.1.1(react@19.1.1)
+
   react@19.1.1: {}
 
   read-cache@1.0.0:
@@ -2524,6 +2621,8 @@ snapshots:
   readdirp@3.6.0:
     dependencies:
       picomatch: 2.3.1
+
+  remove-accents@0.5.0: {}
 
   resolve-from@4.0.0: {}
 
@@ -2572,6 +2671,8 @@ snapshots:
 
   semver@7.7.2: {}
 
+  set-cookie-parser@2.7.1: {}
+
   shebang-command@2.0.0:
     dependencies:
       shebang-regex: 3.0.0
@@ -2579,6 +2680,10 @@ snapshots:
   shebang-regex@3.0.0: {}
 
   signal-exit@4.1.0: {}
+
+  sort-by@1.2.0:
+    dependencies:
+      object-path: 0.6.0
 
   source-map-js@1.2.1: {}
 
