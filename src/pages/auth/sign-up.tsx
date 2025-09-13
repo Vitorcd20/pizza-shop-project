@@ -1,6 +1,8 @@
+import { registerRestaurant } from "@/api/register-restaurant";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useMutation } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -12,33 +14,40 @@ const signUpForm = z.object({
   managerName: z.string(),
   phone: z.string(),
   email: z.string().email(),
-})
+});
 
-type SignUpForm = z.infer<typeof signUpForm>
+type SignUpForm = z.infer<typeof signUpForm>;
 
 export function SignUp() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
     formState: { isSubmitting },
-  } = useForm<SignUpForm>()
+  } = useForm<SignUpForm>();
+
+  const { mutateAsync: registerRestaurantFn } = useMutation({
+    mutationFn: registerRestaurant,
+  });
 
   async function handleSignUp(data: SignUpForm) {
     try {
-      console.log(data)
+      await registerRestaurantFn({
+        restaurantName: data.restaurantName,
+        managerName: data.managerName,
+        email: data.email,
+        phone: data.phone,
+      });
 
-      await new Promise((resolve) => setTimeout(resolve, 2000))
-
-      toast.success('Restaurant registered successfully!', {
+      toast.success("Restaurant registered successfully!", {
         action: {
-          label: 'Login',
-          onClick: () => navigate('/sign-in'),
+          label: "Login",
+          onClick: () => navigate(`/sign-in?email=${data.email}`),
         },
-      })
-    } catch (error) {
-      toast.error('Error while registering restaurant.')
+      });
+    } catch {
+      toast.error("Error while registering restaurant.");
     }
   }
 
@@ -67,7 +76,7 @@ export function SignUp() {
               <Input
                 id="restaurantName"
                 type="text"
-                {...register('restaurantName')}
+                {...register("restaurantName")}
               />
             </div>
 
@@ -76,18 +85,18 @@ export function SignUp() {
               <Input
                 id="managerName"
                 type="text"
-                {...register('managerName')}
+                {...register("managerName")}
               />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="email">Your email</Label>
-              <Input id="email" type="email" {...register('email')} />
+              <Input id="email" type="email" {...register("email")} />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="phone">Your phone</Label>
-              <Input id="phone" type="tel" {...register('phone')} />
+              <Input id="phone" type="tel" {...register("phone")} />
             </div>
 
             <Button disabled={isSubmitting} className="w-full" type="submit">
@@ -95,11 +104,11 @@ export function SignUp() {
             </Button>
 
             <p className="px-6 text-center text-sm leading-relaxed text-muted-foreground">
-              By continuing, you agree to our{' '}
+              By continuing, you agree to our{" "}
               <a href="" className="underline underline-offset-4">
                 terms of service
-              </a>{' '}
-              and{' '}
+              </a>{" "}
+              and{" "}
               <a href="" className="underline underline-offset-4">
                 privacy policy
               </a>
@@ -108,5 +117,5 @@ export function SignUp() {
         </div>
       </div>
     </>
-  )
+  );
 }
