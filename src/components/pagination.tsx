@@ -11,14 +11,43 @@ interface PaginationProps {
   pageIndex: number;
   totalCount: number;
   perPage: number;
+  onPageChange: (pageIndex: number) => Promise<void> | void;
 }
 
 export function Pagination({
   pageIndex,
   perPage,
   totalCount,
+  onPageChange,
 }: PaginationProps) {
   const pages = Math.ceil(totalCount / perPage) || 1;
+
+  const controls = [
+    {
+      icon: ChevronsLeft,
+      label: "First page",
+      action: () => onPageChange(0),
+      disabled: pageIndex === 0,
+    },
+    {
+      icon: ChevronLeft,
+      label: "Previous page",
+      action: () => onPageChange(pageIndex - 1),
+      disabled: pageIndex === 0,
+    },
+    {
+      icon: ChevronRight,
+      label: "Next page",
+      action: () => onPageChange(pageIndex + 1),
+      disabled: pageIndex + 1 >= pages,
+    },
+    {
+      icon: ChevronsRight,
+      label: "Last page",
+      action: () => onPageChange(pages - 1),
+      disabled: pageIndex + 1 >= pages,
+    },
+  ];
 
   return (
     <div className="flex items-center justify-between">
@@ -31,22 +60,18 @@ export function Pagination({
           Page {pageIndex + 1} of {pages}
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="outline" className="h-8 w-8 p-0">
-            <ChevronsLeft className="h-4 w-4" />
-            <span className="sr-only">First page</span>
-          </Button>
-          <Button variant="outline" className="h-8 w-8 p-0">
-            <ChevronLeft className="h-4 w-4" />
-            <span className="sr-only">Previous page</span>
-          </Button>
-          <Button variant="outline" className="h-8 w-8 p-0">
-            <ChevronRight className="h-4 w-4" />
-            <span className="sr-only">Next page</span>
-          </Button>
-          <Button variant="outline" className="h-8 w-8 p-0">
-            <ChevronsRight className="h-4 w-4" />
-            <span className="sr-only">Last page</span>
-          </Button>
+          {controls.map(({ icon: Icon, label, action, disabled }, i) => (
+            <Button
+              key={i}
+              onClick={action}
+              variant="outline"
+              className="w-8 h-8"
+              disabled={disabled}
+            >
+              <Icon className="w-4 h-4" />
+              <span className="sr-only">{label}</span>
+            </Button>
+          ))}
         </div>
       </div>
     </div>
