@@ -6,10 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 const data = [
   { product: 'Pepperoni', amount: 40 },
-  { product: 'Mussarela', amount: 30 },
-  { product: 'Marguerita', amount: 50 },
-  { product: '4 Queijos', amount: 16 },
-  { product: 'Frango frito', amount: 26 },
+  { product: 'Mozzarella', amount: 30 },
+  { product: 'Margherita', amount: 50 },
+  { product: 'Four Cheese', amount: 16 },
+  { product: 'Fried Chicken', amount: 26 },
 ]
 
 const COLORS = [
@@ -36,7 +36,7 @@ export function PopularProductsChart() {
       <CardHeader className="pb-8">
         <div className="flex items-center justify-between ">
           <CardTitle className="text-base font-medium">
-            Produtos populares
+            Popular Products
           </CardTitle>
           <BarChart className="h-4 w-4 text-muted-foreground" />
         </div>
