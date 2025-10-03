@@ -20,11 +20,15 @@ TailwindCSS
 React Query
 Axios
 ```
-📦 Getting Started
 
+```
+📦 Getting Started
+```
 Clone the repository and install dependencies:
 
 git clone https://github.com/YOUR-USERNAME/pizzashop.git
+
 cd pizzashop
 npm install
 npm run dev
+```
